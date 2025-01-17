@@ -1,13 +1,9 @@
 import Fastify from 'fastify';
 
-// import routePastel from './routes/pastel/index.js';
-
 let fastify = Fastify({ logger: true });
 
 fastify.get('/', (request, reply) => {
     return { message: 'Oi! chamado a partir da raiz!' }
 });
 
-// fastify = routePastel(fastify);
-
-fastify.listen({ port: 3000 });
+fastify.listen({ host:'0.0.0.0', port: 3000 }, ()=>console.log('server running on port 3000'));
